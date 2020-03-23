@@ -36,7 +36,7 @@ sqlstatement="INSERT INTO host_usage ("timestamp", host_id, memory_free, cpu_ide
 
 #echo $sqlstatement
 
-psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -c "$sqlstatement"
+psql -h $psql_host -p $psql_port -U $psql_user -d $database -c "$sqlstatement"
 #echo $disk_available
 #echo $timestamp
 exit 0

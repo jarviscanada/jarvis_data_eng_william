@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info
 
 
 --test sample statement
-INSERT INTO host_info (id, hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, L2_cache, total_mem, "timestamp") VALUES (1, 'spry-framework-236416.internal', 1, 'X86_64', 'Intel(R) Xeon(R) CPU @ 2.30GHz', 2300.000, 256, 601324, '2019-05-29 17:49:53');
+--INSERT INTO host_info (id, hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, L2_cache, total_mem, "timestamp") VALUES (1, 'spry-framework-236416.internal', 1, 'X86_64', 'Intel(R) Xeon(R) CPU @ 2.30GHz', 2300.000, 256, 601324, '2019-05-29 17:49:53');
 --SELECT * FROM host_info;
 --working :) 
 

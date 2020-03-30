@@ -20,28 +20,30 @@ There are tree scripts : Psql_docker.sh, host_info.sh, host_usage.sh
 
 ## Usage
 
-1.`Psql_docker.sh`  :init database and tables. Use parameter "start", password is optional, password will not update if database/volume was previously created. To stop the database container use parameter stop
+1. `Psql_docker.sh`  :init database and tables. Use parameter "start", password is optional, password will not update if database/volume was previously created. To stop the database container use parameter stop
 
 `./psql_docker.sh start|stop [password] (to start or stop container) 
 then run psql -h localhost -U postgres -W -f sql/ddl.sql (to create ddl/database)`
 
-2.`host_info.sh` store information about the hardware specifiction to the table, require details of connection as argument (host, port, database name, user and password).
+2. `host_info.sh` store information about the hardware specifiction to the table, require details of connection as argument (host, port, database name, user and password).
 
  `./host_info.sh localhost 5432 host_agent postgres password`
  
-3.`host_usage.sh`store information about the rescource usage by the server to the table, require details of connection as argument (host, port, database name, user and password).
+3. `host_usage.sh`store information about the rescource usage by the server to the table, require details of connection as argument (host, port, database name, user and password).
 
 `./host_usage.sh localhost 5432 host_agent postgres password`
 
 4. crontab setup: this allow required script( `host_usage.sh`) to run every minute
 
-`crontab -e
-* * * * * bash [PATH to your file]/linux_sql/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log`
+```
+crontab -e
+* * * * * bash [PATH to your file]/linux_sql/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
+```
 
 ## Possible improvements
 
-1.record the process list if current usage is too high
-2.Sql Query using Windows function instead of GROUP by to improve the performance
-3.add a script to remove outdated data from table to prevent database getting to big with unnecessary data
+1. record the process list if current usage is too high
+2. Sql Query using Windows function instead of GROUP by to improve the performance
+3. add a script to remove outdated data from table to prevent database getting to big with unnecessary data
 
 

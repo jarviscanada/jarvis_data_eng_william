@@ -3,8 +3,8 @@
 #check  input if it is valid
 if [ $# -ne 5 ];
 then
-	echo "illegal number of inputs"
-	exit 1
+    echo "illegal number of inputs"
+    exit 1
 fi
 
 #assign arguments to varible 
@@ -33,10 +33,6 @@ export PGPASSWORD=$psql_password
 #insert statment
 sqlstatement="INSERT INTO host_usage ("timestamp", host_id, memory_free, cpu_idel, cpu_kernel, disk_io, disk_available) VALUES ('${timestamp}', (select id from host_info where hostname='$hostname'), ${memory_free}, ${cpu_idel}, ${cpu_kernel}, ${disk_io}, ${disk_available})";
 
-
-#echo $sqlstatement
-
 psql -h $psql_host -p $psql_port -U $psql_user -d $database -c "$sqlstatement"
-#echo $disk_available
-#echo $timestamp
+
 exit 0

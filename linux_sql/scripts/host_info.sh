@@ -4,7 +4,6 @@
 if [ $# -ne 5 ];
 then
     echo "illegal number of inputs"
-	exit 1
 fi
 
 #assign arguments to varible 

@@ -26,7 +26,6 @@ disk_io=$(echo "$vm" | tail -1 | awk '{print $10}' | xargs )
 disk_available=$(echo "$disku" | head -2 | tail -1 | awk '{print $4}' | grep -o -E '[0-9]+' | xargs)
 timestamp=$(echo |vmstat -t | awk '{print $18,$19}'| egrep "*-" | xargs)
 
-
 #export  password
 export PGPASSWORD=$psql_password
 

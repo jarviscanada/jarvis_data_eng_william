@@ -3,7 +3,7 @@ The Cluster Monitor Agent is an internal tool that collects the hardware informa
 
 ## Architecture and Design
 1 Cluster Monitor Agent Diagram:
-![image](/linux_sql/assets/sizedDiagram.png)
+![image](/linux_sql/assets/sizedDiagram2.png)
 
 2 Tables:
 
